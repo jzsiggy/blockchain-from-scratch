@@ -9,7 +9,6 @@ class Blockchain():
         data = "Genesis\t"
         prev_hash = '0'*64
         genesis_block = Block(data, prev_hash)
-        genesis_block.calculate_valid_hash()
         self.blocks.append(genesis_block)
     
     def get_last_hash(self):
@@ -20,7 +19,6 @@ class Blockchain():
     def add_new_block(self, data):
         prev_hash = self.get_last_hash()
         new_block = Block(data, prev_hash)
-        new_block.calculate_valid_hash()
         self.blocks.append(new_block)
 
     def get_blocks(self):

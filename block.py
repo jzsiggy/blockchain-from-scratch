@@ -6,7 +6,7 @@ class Block():
     self.timestamp = datetime.utcnow()
     self.data = data
     self.prev_block_hash = previous_block_hash
-    self.hash = self.calculate_valid_hash()
+    self.calculate_valid_hash()
 
   def is_hash_valid(self, hash):
         return (hash.startswith('0' * 3))
